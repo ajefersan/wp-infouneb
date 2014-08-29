@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="templates/css/print.css">
+	</head>
+	<body>			
+		<header>
+			<strong><?php echo evento_tipo($bli['Tipo']) . ' ' . $bli['Titulo']; ?></strong> <br>
+				<?php echo data($bli['Data'], 'd/m/Y \à\s H:i'); ?> <br>
+				Valor: R$ <?php echo $bli['Valor']; ?><br>
+				Total de Inscritos: <?php echo $bli['Contador']; ?><br>
+				Vagas: <?php echo $bli['Vagas']; ?><br>
+		</header>
+		<table>
+			<thead>
+				<tr>
+
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ($inscritos as $key => $value): ?>
+					<tr>
+						<td><?php echo $value->Nome; ?></td>
+						<td><?php echo mf($value->CPF, '###.###.###-##'); ?></td>
+						<td><?php echo ($value->Status) ? 'Pagamento Realizado' : 'Aguardando Pagamento' ; ?></td>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<div class="wrap">
+	
+<h2>Inscrições</h2>
+
+<p><strong><?php echo count($inscritos); ?> pessoas inscritas</strong></p>
+		
+<table class="wp-list-table widefat fixed tags">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>E-mail</th>
+			<th>CPF</th>
+			<th>Telefone</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tbody id="the-list">
+		<?php foreach($inscritos as $key => $value): ?>
+			<tr>
+				<td><a href="<?php echo print_url(); ?>?u=<?php echo $value->Id; ?>" target="_blank"><?php echo $value->Nome; ?></a></td>
+				<td><?php echo $value->Email; ?></td>
+				<td><?php echo mf($value->CPF, '###.###.###-##'); ?></td>
+				<td><?php echo mf((!empty($value->Telefone) ? $value->Telefone : $value->Celular), '(##) ####-####'); ?></td>
+				<td><?php echo ($value->Status) ? 'Pagamento Realizado' : 'Aguardando Pagamento'; ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+
+</div>

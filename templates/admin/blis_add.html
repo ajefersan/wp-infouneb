@@ -1,0 +1,72 @@
+<style>
+	.clear{ clear:both; }
+</style>
+
+
+
+<div id="col-left">
+
+<div class="col-wrap">
+
+	<div class="form-wrap">
+		<h3>Adicionar novo evento</h3>
+
+		<form id="addbli" method="post" action="" class="validate">
+
+			<div class="form-field" style="width:30%; float:left">
+				<label for="bli_tipo">Tipo</label>
+				<select id="bli_tipo" name="bli_tipo" class='postform' >
+					<option id="minicurso" value="1">Minicurso</option>
+					<option id="laboratorio" value="2">Laboratório</option>
+				</select>
+			</div>
+
+			<div class="form-field form-required" style="width:67%; float:left">
+				<label for="bli_titulo">Titulo</label>
+				<input name="bli_titulo" id="bli_titulo" type="text" value="" size="40" aria-required="true" />
+			</div>
+			
+			<div class="clear"></div>
+
+			<div class="form-field form-required" style="width:67%; float:left">
+				<label for="bli-data">Data</label>
+				<input name="bli_data_dia" id="bli-data" type="text" value="<?php echo date('d'); ?>" size="20" aria-required="true" style="width:40px;" /> /
+				<input name="bli_data_mes" id="bli-data" type="text" value="<?php echo date('m'); ?>" size="20" aria-required="true" style="width:40px;" /> /
+				<input name="bli_data_ano" id="bli-data" type="text" value="<?php echo date('Y'); ?>" size="20" aria-required="true" style="width:60px;"/>
+			</div>
+
+			<div class="form-field form-required" style="width:30%; float:left">
+				<label for="bli-hora">Hora</label>
+				<input name="bli_hora_hora" id="bli-hora" type="text" value="<?php echo date('H'); ?>" size="40" aria-required="true" style="width:40px;" /> :
+				<input name="bli_hora_minuto" id="bli-hora" type="text" value="<?php echo date('i'); ?>" size="40" aria-required="true" style="width:40px;" />
+			</div>
+
+			<div class="clear"></div>
+			
+			<div class="form-field form-required" style="width:50%; float:left">
+				<label for="bli_vagas">Vagas</label>
+				<input name="bli_vagas" id="bli_vagas" type="text" value="" size="40" aria-required="true" />
+			</div>
+
+			<div class="form-field form-required" style="width:47%; float:left">
+				<label for="bli_valor">Valor</label>
+				<input name="bli_valor" id="bli_valor" type="text" value="" size="40" aria-required="true" />
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="form-field">
+				<label for="bli_description">Descrição</label>
+				<textarea name="bli_description" id="bli_description" rows="5" cols="40"></textarea>
+			</div>
+
+			<p class="submit">
+				<input type="submit" name="submit_bli" id="submit" class="button button-primary" value="Adicionar nova BLI's"  />
+			</p>
+		</form>
+
+	</div>
+</div>
+
+</div><!-- /col-left -->
+</div>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="templates/css/print.css">
+	</head>
+	<body>
+		<strong>Nome:</strong> <?php echo $inscrito['Nome']; ?><br>
+		<strong>E-mail:</strong> <?php echo $inscrito['Email']; ?><br>
+		<strong>CPF:</strong> <?php echo mf($inscrito['CPF'], '###.###.###-##'); ?><br>
+		<strong>Data de Nascimento:</strong> <?php echo data($inscrito['Nascimento']); ?><br>
+		<strong>Sexo:</strong> <?php echo (!$inscrito['Sexo']) ? 'Masculino' : 'Feminino'; ?><br>
+		<strong>Telefone:</strong> <?php echo (isset($inscrito['Telefone']) ? mf($inscrito['Telefone'], '(##) ####-####') : ''); ?><br>
+		<strong>Celular:</strong> <?php echo (isset($inscrito['Celular']) ? mf($inscrito['Celular'], '(##) ####-####') : ''); ?><br>
+		<strong>Status:</strong> <?php echo ($inscrito['Status']) ? 'Pagamento Realizado' : 'Aguardando Pagamento' ; ?><br>
+		<strong>Tipo: </strong> <?php echo (!$inscrito['Profissional']) ? 'Estudante' : 'Profissional'; ?><br>
+		<strong>Titulo: </strong> <?php echo inscrito_titulo($inscrito['Titulo']); ?><br>
+		<strong>Área de Atuação: </strong> <?php echo $inscrito['Area']; ?><br>
+
+		<h3>Cursos:</h3>
+
+		<ul>
+			<?php foreach($blis as $key => $value): ?>
+			<li><?php echo evento_tipo($value->Tipo) .' '. $value->Titulo . '</strong> - '. data($value->Data, 'd/m/Y \à\s H:i');  ?></li>
+			<?php endforeach; ?>
+		</ul>
+	</body>
+</html>
