@@ -1,0 +1,890 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(font-awesome.min.css);
+
+
+.gradiente(@cor-inicial, @cor-final){
+	background: @cor-inicial;
+	background: -moz-linear-gradient(top, @cor-inicial 0%, @cor-final 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@cor-inicial), color-stop(100%,@cor-final));
+	background: -webkit-linear-gradient(top, @cor-inicial 0%,@cor-final 100%);
+	background: -o-linear-gradient(top, @cor-inicial 0%,@cor-final 100%);
+	background: -ms-linear-gradient(top, @cor-inicial 0%,@cor-final 100%);
+	background: linear-gradient(to bottom, @cor-inicial 0%,@cor-final 100%);
+}
+
+.trans(){
+	-webkit-transition: all 500ms linear; 
+	-moz-transition: all 500ms linear; 
+	-o-transition: all 500ms linear; 
+	-ms-transition: all 500ms linear;
+	transition: all 500ms linear; 
+}
+
+@cor-azul : #4CB0FE;
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	border-top: 13px solid @cor-azul;
+	background: #F5F5F5 url(../img/background-pattern.png);
+	font-family: 'Lato';
+	background-attachment: fixed;
+	min-width: 510px;
+
+	.clear{
+		clear: both;
+	}
+}
+
+#header{
+	background: url(../img/cerebro2.png) no-repeat top center;
+	height: 530px;
+	width:100%;
+	padding-top: 70px;
+
+	#logo{
+		position: relative;
+		background: url(../img/logo.png);
+		width: 507px;
+		height: 295px;
+		margin:0px auto 50px auto;
+	}
+	.info{
+		text-align: center;
+		font-weight: 400;
+		color:#000;
+
+		h1{
+			font-weight: 900;
+			text-transform: uppercase;
+			color: @cor-azul;
+			font-size: 40px;
+		}
+		h2{
+			font-size: 22px;
+		}
+		p{
+			font-size: 14px;
+			width: 507px;
+			margin: 20px auto;
+		}
+	}
+}
+
+#navigation{
+	position: fixed;
+	z-index: 99;
+	top: 30px;
+	right: 4em;
+	width: 320px;
+
+	nav{
+
+		ul{
+			list-style:none;
+		    position:relative;
+		    display:inline-table;
+
+		    &:after{
+		    	content: ""; 
+		    	clear:both; 
+		    	display:block;
+		    }
+		    li{
+		    	display: block;
+				cursor:pointer;
+				float: left;
+
+
+		    	a{
+		    		float:left;
+		    		text-decoration: none;
+		    	}
+
+		    	&:hover > ul{
+		    		display: block;
+		    	}
+
+		    	&:hover{
+					a.menu span{
+						background: @cor-azul;
+						color:#fff;
+					}
+		    	}
+				
+				&:nth-child(3){
+					margin-right:10px;
+				}
+
+		    	a.menu{
+					background: #fff;
+					padding: 5px 10px;
+					border-radius: 5px;
+					display: block;
+					font-size: 24px;
+					text-transform: uppercase;
+					font-weight: 300;
+					text-decoration: none;
+					color: @cor-azul;
+					margin-bottom: 5px;
+
+					span{
+						border: 1px solid @cor-azul;
+						border-radius: 100px;
+						padding: 5px 7px;
+						font-size: 18px;
+						font-weight: normal;
+					}
+		    	}
+		    	.social.fa{
+					padding: 10px;
+					border-radius:100px;
+					height: 13px;
+					width:13px;
+					display: block;
+					text-align: center;
+					line-height: 13px;
+					text-decoration: none;
+					color: #fff;
+					margin:5px;
+					border:2px solid #F5F5F5;
+
+					&.fa-facebook{
+						background: #5D82D2;
+					}
+					&.fa-twitter{
+						background: #40BFF4;
+					}
+					&.fa-instagram{
+						background: #5085A5;
+					}
+
+					&:hover{
+						background: @cor-azul;
+					}
+				}
+		    }
+		    ul{
+		    	display: none;
+
+		    	li{
+		    		float:none;
+		    		display: block;
+
+		    		a{
+		    			background: #fff;
+						padding: 5px 10px;
+						border-radius: 5px;
+						display: block;
+						font-size: 16px;
+						text-transform: uppercase;
+						font-weight: 300;
+						text-decoration: none;
+						color: @cor-azul;
+						margin-bottom: 5px;
+
+						&:hover{
+							background: @cor-azul;
+							color: #fff;
+						}
+		    		}
+		    	}
+		    }
+		}
+	}
+}
+
+.pagina_azul{
+
+	.topo{
+		height: 109px;
+		background: url(../img/pagina_azul_topo.png) no-repeat top center;
+		display: block;
+		margin-top: -109px;
+
+		.seta{
+			position: absolute;
+			width: 85px;
+			height: 85px;
+			background: url(../img/seta.png);
+			margin:85px auto 0px -43px;
+			left:50%;
+		}
+	}
+	.content{
+		background: @cor-azul url(../img/pagina_azul_background.png);
+		padding: 30px;
+		padding-bottom:109px;
+		font-size: 14px;
+	}
+	.wrapper{
+		max-width: 1000px;
+		margin: auto;
+	}
+}
+#oevento {
+
+	.botaoInscricao{
+		width:200px;
+		text-align: center;
+		margin:auto;
+		display: block;
+		padding: 10px;
+		border:0px;
+		border-radius:5px;
+		font-size: 18px;
+		color:#fff;
+		font-weight: 700;
+		text-transform: uppercase;
+		.gradiente(#5ab4f2,#2977a8);
+		cursor:pointer;
+		position: absolute;
+		margin:85px auto -100px -100px;
+		left:50%;
+
+		&:hover{
+			.gradiente(#5ab4f2,#3F93CA);
+		}	
+	}
+
+	.content{
+		padding-top: 80px;
+		color: #fff;
+
+		.introducao{
+			background: url(../img/oevento_cerebro.png) no-repeat;
+			background-position: left 80px;
+
+			h2{
+				width: 270px;
+				float: left;
+				text-align: right;
+				text-transform: uppercase;
+				font-weight: 300;
+				font-size: 22px;
+				background: url(../img/dash.png) no-repeat bottom right;
+				padding-bottom: 10px;
+			}
+
+			.historia{
+				text-align: justify;
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+
+				-webkit-column-gap: 2em;
+				-moz-column-gap: 2em;
+				column-gap: 2em;
+
+				-webkit-hyphens: auto;
+				-moz-hyphens: auto;
+				-ms-hyphens: auto;
+				hyphens: auto;
+
+				width:700px;
+
+				float: right;
+
+				margin-bottom: 20px;
+
+				p:first-child:first-letter{
+					text-transform: uppercase;
+					font-family: Times, serif;
+					font-size: 3.4em;
+					line-height: 1em;
+					float: left;
+					margin-right: 0.1em;
+				}
+			}
+			.headline{
+				font-weight: 900;
+				color: #252525;
+				font-size: 24px;
+				width:700px;
+				float: right;
+				text-align: justify;
+			}
+		}
+	}
+}
+.pagina{
+
+	.topo{
+		height: 109px;
+		background: url(../img/pagina_cinza_topo.png) no-repeat top center;
+		display: block;
+		margin-top: -209px;
+
+		.seta{
+			position: absolute;
+			width: 85px;
+			height: 85px;
+			background: url(../img/seta.png);
+			margin:85px auto 0px -43px;
+			left:50%;
+		}
+	}
+	.content{
+		background: @cor-azul url(../img/pagina_azul_background.png);
+		padding: 30px;
+		padding-bottom:109px;
+		font-size: 14px;
+	}
+	.wrapper{
+		max-width: 1000px;
+		margin: auto;
+	}
+}
+#programacao{
+		padding-top: 100px;
+		background: url(../img/background_programacao.png) no-repeat bottom center;
+
+		.wrapper{
+			margin-top: 50px;
+			width: 910px;
+			padding-bottom: 30px;
+		}
+
+		h2.p_titulo{
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 24px;
+			background: url(../img/dash_blue.png) no-repeat bottom right;
+			padding-bottom: 10px;
+			color: @cor-azul;
+			width:170px;
+		}
+		
+		ul#prog_nav{
+			li{
+				margin:20px 10px;
+				list-style: none;
+				float: left;
+				width:164px;
+				display: block;
+
+				a{
+					background: #EFEFEF;
+					width:100%;
+					height: 60px;
+					float: left;
+					text-align: center;
+					text-transform: uppercase;
+					display: block;
+					padding-top:20px;
+					text-decoration: none;
+					color:#2E2E2E;
+					font-weight: 700;
+					font-size: 18px;
+
+					&:nth-child(1){
+						margin-left:0px;
+					}
+
+					&.active{
+						background: #4EAFFF;
+						color:#fff;
+					}
+				}
+
+				&:first-child{
+					margin-left:0px;
+				}
+				&:last-child{
+					margin-right:0px;
+				}
+			}
+		}
+		ul.hidden{
+			display: none;
+		}
+		ul.programacao{
+			li{
+				height: 130px;
+				list-style: none;
+				margin-bottom: 20px;
+
+				&.coffee_break{
+					height: 90px;
+					overflow: hidden;
+
+					h2.hora{
+						span{
+							&.fa-clock-o, &.fa-cutlery{
+								margin-top:15px !important;
+							}
+						}
+					}
+					.info{
+						h1{
+							line-height: 70px;
+						}
+					}
+				}
+
+				h2.hora{
+					height: 120px;
+					width:164px;
+					background: #4EAFFF;
+					margin-right: 20px;
+					float: left;
+					color:#fff;
+					text-align: center;
+					font-weight: normal;
+
+					span{
+						
+						font-size: 18px;
+
+						&.fa-clock-o, &.fa-cutlery{
+							margin-top: 30px;
+							display: block;
+							font-size: 36px;
+						}
+					}
+				}
+				.info{
+					background: #EFEFEF;
+					height: 110px;
+					float: left;
+					display: block;
+					width: 696px;
+					padding: 5px 10px;
+
+					h1{
+						font-weight: 900;
+						color:#4EAFFF;
+						text-transform: uppercase;
+						margin-bottom: 5px;
+						font-size: 24px;
+					}
+					p{
+						font-size: 13px;
+						margin-bottom: 5px;
+					}
+				}
+			}	
+	}
+}
+#inscricao{
+
+	.inscricaoFechada{
+		background: rgba(77,175,255, 0.65);
+		position: absolute;
+		width: 100%;
+		height: 680px;
+
+		h3{
+			text-align: center;
+			line-height: 700px;
+			color:#fff;
+			text-shadow: 1px 1px 2px rgba(114, 114, 114, 1);
+		}
+	}
+
+	.pattern{
+		background: url(../img/inscricao_cerebro.png) no-repeat;
+		background-position: bottom right;
+	}
+	.wrapper{
+		margin-top:40px;
+	}
+	.info{
+		margin-bottom: 30px;
+
+		h2{
+			width: 270px;
+			float: left;
+			text-align: right;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 22px;
+			background: url(../img/dash.png) no-repeat bottom right;
+			padding-bottom: 10px;
+			color:#fff;
+		}
+		p{
+			margin-left: 20px;
+			font-size: 13px;
+			width: 600px;
+			float: left;
+			font-weight: 700;
+		}
+	}
+	.formulario{
+		width: 800px;
+		margin:auto;
+
+		p.error{
+			clear:both;
+			color: #000;
+			font-size: 12px;
+			background: rgba(255, 255, 255, 0.45);
+			display: inline-block;
+			padding: 1px 3px;
+			border-radius: 5px;
+			float: right;
+			margin-top:3px;
+		}
+
+		fieldset{
+			border: 0px;
+
+			legend{
+				display: none;
+			}
+
+			&#tos{
+				background: #fff;
+				padding: 30px;
+				width:572px;
+				float: right;
+				margin-top: 30px;
+
+				p.error{
+					display: none !important;
+				}
+			}
+		}
+		label{
+			display: block;
+			height: 60px;
+
+			span{
+				color: #fff;
+				font-weight: 700;
+				font-size: 16px;
+				display: block;
+				width:150px;
+				text-align: right;
+				float: left;
+				line-height: 35px;
+				text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+			}
+
+			&[for="senha"], &[for="confirme_senha"], &[for="telefone"], &[for="celular"]{
+				width:50%;
+				float: left;
+			}
+
+			&[for="nome"]{
+				width:65%;
+				float: left;
+			}
+			&[for="cpf"]{
+				width:35%;
+				float: right;
+
+				span{
+					width:50px;
+				}
+			}
+			&[for="nascimento"]{
+				width:50%;
+				float: left;
+
+				span{
+					margin-right: 13px;
+				}
+			}
+
+			&#sexo{
+				width:50%;
+				float: left;
+				font-weight: 300;
+				text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+				color:#fff;
+
+				span{
+					width:90px;
+					margin-right: 13px;
+				}
+			}
+
+			&[for="celular"]{
+				span{
+					width: 80px;
+				}
+			}
+
+			&#profissional{
+				width:270px;
+				float: left;
+				font-weight: 300;
+				text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+				color:#fff;
+
+				span{
+					height: 60px;
+					margin-right: 10px;
+				}
+
+				input{
+					margin:6px;
+				}
+			}
+
+			&[for="titulo"]{
+				width:220px;
+				float: left;
+
+				span{
+					width: 60px;
+				}
+			}
+
+			&[for="area"]{
+				width:310px;
+				float: left;
+
+				span{
+					width:130px;
+				}
+			}
+
+			&[for="tos"]{
+				width:250px;
+				height: 20px;
+				display: block;
+				margin:auto;
+				margin-bottom: 20px;
+				font-size: 16px;
+				font-weight: 300;
+				color:#6F6F6F;
+
+				a{
+					text-decoration: none;
+					font-weight: 700;
+					color:#6F6F6F;
+				}
+			}
+
+		}
+		input{
+
+			&[type="text"], &[type="password"]{
+				padding: 10px;
+				border: 0px;
+				float: right;
+				border-radius:5px;
+				-moz-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+				-webkit-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+				box-shadow:  inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+			}
+
+			&[type="text"]{
+				width: 610px;
+			}
+
+			&[type="password"], &#telefone, &#celular, &#nascimento{
+				width: 210px;
+			}
+
+			&[type="radio"]{
+				margin: 12px;
+			}
+
+			&[type="submit"]{
+				width:200px;
+				text-align: center;
+				margin:auto;
+				display: block;
+				padding: 10px;
+				border:0px;
+				border-radius:5px;
+				font-size: 18px;
+				color:#fff;
+				font-weight: 700;
+				text-transform: uppercase;
+				.gradiente(#5ab4f2,#2977a8);
+				cursor:pointer;
+				margin-bottom: -50px;
+
+				&:hover{
+					.gradiente(#5ab4f2,#3F93CA);
+				}			
+			}
+
+			&#nome{
+				width:330px;
+			}
+
+			&#cpf{
+				width:200px;
+			}
+
+			&#celular{
+				width: 280px;
+			}
+
+			&#area{
+				width:150px;
+			}
+
+			&.error{
+				background: #FFEAEA;
+			}
+
+		}
+		select{
+			-moz-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+			-webkit-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+			box-shadow:  inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+			padding: 6px;
+			border-radius:5px;
+			float: left;
+			margin: 3px 6px;
+			font-size: 15px;
+			width:140px;
+			border:0px;
+		}
+	}
+
+	&.footerfix{
+		margin-bottom: -50px;
+	}
+}
+#patrocinadores{
+
+	.pattern{
+		background: url(../img/background_patrocinadores.png) no-repeat;
+		background-position: center 128px;
+
+	}
+	.topo{
+		height: 128px;
+		background: url(../img/pagina_cinza3_topo.png) no-repeat bottom center;
+		display: block;
+		margin-top: -128px;
+	}
+
+	h2.p_titulo{
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 24px;
+		background: url(../img/dash_blue.png) no-repeat bottom right;
+		padding-bottom: 10px;
+		color: @cor-azul;
+		width:215px;
+		margin:auto;
+		margin-top: 40px;
+	}
+	ul#patrocinio{
+		margin:auto;
+		width:840px;
+
+		li{
+			display: block;
+			width:200px;
+			background: #fff;
+			float: left;
+			margin:20px;
+			padding: 20px;
+			-webkit-box-shadow: 4px 4px 0px 0px rgba(195, 196, 197, 1);
+			-moz-box-shadow:    4px 4px 0px 0px rgba(195, 196, 197, 1);
+			box-shadow:         4px 4px 0px 0px rgba(195, 196, 197, 1);
+
+			.box{
+				border: 1px solid #000;
+				padding: 20px 20px 10px 20px;
+
+				img{
+					margin-bottom: 10px;
+				}
+
+				span{
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 900;
+					text-align: center;
+					display: block;
+				}
+			}
+
+			&.ouro{
+				.box{
+					border-color:#D5CF7F;
+
+					span{ color: #D5CF7F; }
+				}
+			}
+			&.prata{
+				.box{
+					border-color:#CACACA;
+
+					span{ color: #CACACA; }
+				}
+			}
+			&.bronze{
+				.box{
+					border-color:#A27A67;
+
+					span{ color: #A27A67; }
+				}
+			}
+
+			&:hover{
+				.box{
+					border-color: @cor-azul;
+
+					span{ color: @cor-azul; }
+				}
+			}
+		}
+	}
+}
+#footer{
+	background: #fff;
+	margin-top: 50px;
+	height: 130px;
+
+	.wrapper{
+		width:900px;
+		margin: auto;
+		padding-top: 40px;
+		height: 90px;
+		background: url(../img/background_footer.png) no-repeat;
+	}
+
+	.infouneb-logo{
+		background: url(../img/logo-rodape.png) no-repeat top center;
+		width:254px;
+		height: 61px;
+		float: left;
+		border-right: 1px solid @cor-azul;
+		padding-right: 70px;
+		margin-right: 10px;
+	}
+	.casi-logo{
+		background: url(../img/logo-casi.png) no-repeat center;
+		width:127px;
+		height: 61px;
+		float: left;
+		margin-right: 20px;
+	}
+	.consultjr-logo{
+		background: url(../img/logo-consultjr.png) no-repeat center;
+		width:137px;
+		height: 61px;
+		float: left;
+		margin-right: 20px;
+	}
+	.acso-logo{
+		background: url(../img/logo-acso.png) no-repeat center;
+		width:61px;
+		height: 61px;
+		float: left;
+		border-right: 1px solid @cor-azul;
+		padding-right: 50px;
+		margin-right: 40px;
+	}
+	.guirodrigues{
+		background: url(../img/guirodrigues.png) no-repeat center;
+		width:80px;
+		height: 61px;
+		float: left;
+		display: block;
+	}
+}
