@@ -21,9 +21,9 @@
 					<td><a href="?page=infouneb/maratona&m=<?php echo $value->Id; ?>"><?php echo (isset($value->Titulo)) ? $value->Titulo : 'Equipe #' . $value->Id; ?></a></td>
 					<td><?php
 							echo '<strong> Lider: ' . getUserName($value->Lider) . '</strong> (' . $value->Lider .')<br/>';
-							echo (isset($value->Membro1)) ? getUserName($value->Membro1) . ' (' . $value->Membro1 .')<br/>' : '';
-							echo (isset($value->Membro2)) ? getUserName($value->Membro2) . ' (' . $value->Membro2 .')<br/>' : '';
-							echo (isset($value->MembroReserva)) ? 'Reserva: ' . getUserName($value->MembroReserva) . ' (' . $value->MembroReserva .')<br/>' : '';
+							echo ((isset($value->Membro1)) && (!empty($value->Membro1))) ? getUserName($value->Membro1) . ' (' . $value->Membro1 .')<br/>' : '';
+							echo ((isset($value->Membro2)) && (!empty($value->Membro2))) ? getUserName($value->Membro2) . ' (' . $value->Membro2 .')<br/>' : '';
+							echo ((isset($value->MembroReserva)) && (!empty($value->MembroReserva))) ? 'Reserva: ' . getUserName($value->MembroReserva) . ' (' . $value->MembroReserva .')<br/>' : '';
 						?></td>
 					<td><?php echo getStatus($value->Status); ?></td>
 					<td><a href="?page=infouneb/maratona&equipe=<?php echo $value->Id; ?>&status=<?php echo ($value->Status) ? '0' : '1'; ?>" class="button button-primary">Alterar Status</a></td>
