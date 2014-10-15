@@ -1,0 +1,108 @@
+<div class="wrap nosubsub">
+<h2>Eventos</h2>
+
+	<div id="col-right" style="margin-top:70px; max-width:740px; ">
+		<div class="col-wrap">
+
+
+		<table class="wp-list-table widefat fixed tags">
+			<thead>
+				<tr>
+					<th>Titulo</th>
+					<th style="width:130px">Inscritos</th>
+					<th style="width:130px">Confirmados</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<?php foreach($blis as $key => $value): ?>
+					<tr>
+						<td>
+							<strong><?php echo evento_tipo($value->Tipo) . ' ' . $value->Titulo; ?></strong>
+							<div class="row-actions">
+								<a href="?page=infouneb/eventos&e=<?php echo $value->Id; ?>">Ver Detalhes</a>
+							</div>
+						</td>
+						<td><?php echo $value->Contador; ?></td>
+						<td><?php echo $value->Confirmados; ?></td>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
+		</div>
+	</div>
+
+	<div id="col-left">
+
+	<div class="col-wrap">
+
+		<div class="form-wrap">
+			<h3>Adicionar novo evento</h3>
+
+			<?php if(isset($erro)): ?>
+				<div id="setting-error-settings_updated" class="error settings-error"> 
+					<p><strong><?php echo $erro; ?></strong></p>
+				</div>
+			<?php endif; ?>
+
+			<form id="addbli" method="post" action="" class="validate">
+
+				<div class="form-field" style="width:30%; float:left">
+					<label for="bli_tipo">Tipo</label>
+					<select id="bli_tipo" name="bli_tipo" class='postform' >
+						<option id="minicurso" value="1">Minicurso</option>
+						<option id="laboratorio" value="2">Laboratório</option>
+					</select>
+				</div>
+
+				<div class="form-field form-required" style="width:67%; float:left">
+					<label for="bli_titulo">Titulo</label>
+					<input name="bli_titulo" id="bli_titulo" type="text" 
+					<?php echo (isset($_POST['bli_titulo'])) ? 'value="'. $_POST['bli_titulo'].'"' : '' ?> size="40" aria-required="true" />
+				</div>
+				
+				<div class="clear"></div>
+
+				<div class="form-field form-required">
+						<label for="bli_ministrante">Ministrante</label>
+						<input name="bli_ministrante" 
+							   id="bli_ministrante" 
+							   type="text" 
+							   <?php echo (isset($_POST['bli_ministrante'])) ? 'value="'. $_POST['bli_ministrante'].'"' : '' ?>  
+							   size="40" 
+							   aria-required="true" />
+					</div>
+
+				<div class="form-field form-required">
+					<label for="bli_grupo">Datas</label>
+					<select name="bli_grupo" id="bli_grupo" style="width:94%">
+						<option value="0">Segunda e Terça</option>
+						<option value="1">Quarta e Quinta</option>
+					</select>
+				</div>
+
+				<div class="clear"></div>
+				
+				<div class="form-field form-required" style="width:50%; float:left">
+					<label for="bli_vagas">Vagas</label>
+					<input name="bli_vagas" id="bli_vagas" type="text" <?php echo (isset($_POST['bli_vagas'])) ? 'value="'. $_POST['bli_vagas'].'"' : '' ?> size="40" aria-required="true" />
+				</div>
+
+				<div class="form-field form-required" style="width:47%; float:left">
+					<label for="bli_valor">Valor</label>
+					<input name="bli_valor" id="bli_valor" type="text" <?php echo (isset($_POST['bli_valor'])) ? 'value="'. $_POST['bli_valor'].'"' : '' ?> size="40" aria-required="true" />
+				</div>
+
+				<div class="clear"></div>
+
+				<p class="submit">
+					<input type="submit" name="submit_bli" id="submit" class="button button-primary" value="Adicionar nova BLI's"  />
+				</p>
+			</form>
+
+		</div>
+	</div>
+
+	</div><!-- /col-left -->
+</div>

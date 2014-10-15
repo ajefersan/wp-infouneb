@@ -1,0 +1,41 @@
+<div class="wrap">
+	
+	<h2>Inscrições
+		<span class="title-count inscritos-count"><?php echo $contador; ?></span>
+	</h2>
+
+	<form id="posts-filter" action="" method="get">
+		<p class="search-box">
+			<input type="search" id="post-search-input" name="s" value="" disabled="disabled" />
+			<input type="submit" name="" id="search-submit" class="button" value="Pesquisar inscrição" disabled="disabled" />
+		</p>
+	</form>
+
+	<p>&nbsp;</p>
+			
+	<table class="wp-list-table widefat fixed tags">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>E-mail</th>
+				<th>CPF</th>
+				<th>Data de Inscrição</th>
+				<th>Status</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody id="the-list">
+			<?php foreach($lista as $key => $value): ?>
+				<tr>
+					<td><a href="admin.php?page=infouneb&u=<?php echo $value->Id; ?>"><?php echo $value->Nome; ?></a></td>
+					<td><?php echo $value->Email; ?></td>
+					<td><?php echo $value->CPF; ?></td>
+					<td><?php echo date("d/m/Y H:i:s", strtotime($value->InscricaoData)); ?></td>
+					<td><?php echo getStatus($value->Status); ?></td>
+					<td><a href="?page=infouneb&user=<?php echo $value->Id; ?>&status=<?php echo ($value->Status) ? '0' : '1'; ?>" class="button button-primary">Alterar Status</a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+
+</div>

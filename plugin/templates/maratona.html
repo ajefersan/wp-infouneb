@@ -1,0 +1,35 @@
+<div class="wrap">
+
+	<h2>Maratona
+		<span class="title-count inscritos-count"><?php echo $contador; ?></span>
+	</h2>
+
+	<p></p>
+			
+	<table class="wp-list-table widefat">
+		<thead>
+			<tr>
+				<th style="width:20%">Equipe</th>
+				<th>Membros</th>
+				<th style="width:20%">Status</th>
+				<th style="width:13%">Ações</th>
+			</tr>
+		</thead>
+		<tbody id="the-list">
+			<?php foreach($lista as $key => $value): ?>
+				<tr>
+					<td><?php echo (isset($value->Titulo)) ? $value->Titulo : 'Equipe #' . $value->Id; ?></td>
+					<td><?php
+							echo '<strong> Lider: ' . getUserName($value->Lider) . '</strong> (' . $value->Lider .')<p/>';
+							echo (isset($value->Membro1)) ? getUserName($value->Membro1) . ' (' . $value->Membro1 .')<p/>' : '';
+							echo (isset($value->Membro2)) ? getUserName($value->Membro2) . ' (' . $value->Membro2 .')<p/>' : '';
+							echo (isset($value->MembroReserva)) ? 'Reserva: ' . getUserName($value->MembroReserva) . ' (' . $value->MembroReserva .')<p/>' : '';
+						?></td>
+					<td><?php echo ($value->Status) ? 'Pagamento Realizado' : 'Aguardando Pagamento'; ?></td>
+					<td><a href="?page=infouneb/maratona&equipe=<?php echo $value->Id; ?>&status=<?php echo ($value->Status) ? '0' : '1'; ?>" class="button button-primary">Alterar Status</a></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+
+</div>

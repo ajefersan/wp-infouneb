@@ -1,0 +1,89 @@
+<div class="wrap">
+
+	<style>.noborder{ border: 0px !important; box-shadow: 0 0 0!important; }</style>
+
+	<?php if(isset($usuario)) : ?>
+
+	<div id="welcome-panel" class="welcome-panel">
+		<a class="welcome-panel-close" href="admin.php?page=infouneb">Fechar</a>
+		<div class="welcome-panel-content">
+			<h3><?php echo $inscrito['Nome']; ?> - <?php echo getStatus($inscrito['Status']); ?></h3>
+			<p class="about-description"><?php echo $inscrito['CPF']; ?></p>
+
+			<table class="wp-list-table widefat fixed tags noborder">
+			
+			<tbody id="the-list">
+				<tr>
+					<td><strong>E-mail</strong><br><?php echo $inscrito['Email']; ?></td>
+					<td><strong>Data de Nascimento</strong><br><?php echo $inscrito['Nascimento']; ?></td>
+					<td><strong>Sexo</strong><br><?php echo (!$inscrito['Sexo']) ? 'Masculino' : 'Feminino'; ?></td>
+					<td><strong>Telefone</strong><br><?php echo (isset($inscrito['Telefone'])) ? $inscrito['Telefone'] : ''; ?> <?php echo (isset($inscrito['Celular'])) ? '<br>' . $inscrito['Celular'] : ''; ?></td>
+				</tr>
+				<tr>
+					<td><strong>Tipo</strong><br><?php echo (!$inscrito['Profissional']) ? 'Estudante' : 'Profissional'; ?></td>
+					<td><strong>Titulo</strong><br><?php echo inscrito_titulo($inscrito['Titulo']); ?></td>
+					<td><strong>Área de Atuação</strong><br><?php echo $inscrito['Area']; ?></td>
+					<td><strong>Data de Inscrição</strong><br><?php echo date("d/m/Y à\s\ H:i", strtotime($inscrito['InscricaoData'])); ?></td>
+				</tr>
+				<?php if(count($blis) > 0): ?>
+				<tr>
+					<td colspan="4">
+						<strong>Eventos</strong><br>
+						<ul>
+							<?php foreach($blis as $key => $value): ?>
+							<li><?php echo evento_tipo($value->Tipo) .' '. $value->Titulo;  ?></li>
+							<?php endforeach; ?>
+						</ul>
+					</td>
+				</tr>
+				<?php endif; ?>
+			</tbody>
+		</table>
+		<?php if($inscrito['Status'] == 0) : ?>
+		<input type="text" value="http://www.info.uneb.br/pag.php?usuario=<?php echo str_replace(array('.','-'), '', $inscrito['CPF']); ?>" style="margin-right:10px" class="regular-text"/><a href="?page=infouneb&user=<?php echo $inscrito['Id']; ?>&status=-1" class="button button-primary">O e-mail já foi enviado</a>
+		<?php endif; ?>
+		<p></p>
+		</div>
+	</div>
+
+	<?php endif; ?>
+
+	<?php if(isset($evento)) : ?>
+		<!doctype html>
+		
+		<div id="welcome-panel" class="welcome-panel">
+		<a class="welcome-panel-close" href="admin.php?page=infouneb/eventos">Fechar</a>
+		<div class="welcome-panel-content">
+			<h3><?php echo $bli['Titulo']; ?> por <?php echo $bli['Ministrante']; ?></h3>
+			<p class="about-description"><?php echo evento_tipo($bli['Tipo']); ?> na <?php echo grupo_data($bli['Grupo']); ?></p>
+			<p>Valor: R$ <?php echo $bli['Valor']; ?> | Vagas: <?php echo $bli['Vagas']; ?> | 
+				Total de Inscritos: <?php echo $bli['Contador']; ?> 
+				</p>
+	
+				<?php if(count($inscritos) > 0): ?>
+				<table class="wp-list-table widefat fixed tags noborder">
+					<thead>
+						<tr>
+
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($inscritos as $key => $value): ?>
+							<tr>
+								<td><?php echo $value->Nome; ?></td>
+								<td><?php echo $value->CPF; ?></td>
+								<td><?php echo getStatus($value->Status); ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				<?php endif; ?>
+				<p></p>
+			</div>
+		</div>
+	<?php endif; ?>
+
+</div>

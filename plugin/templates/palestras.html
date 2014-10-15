@@ -1,0 +1,127 @@
+<style>	.clear{ clear:both; } </style>
+
+<div class="wrap nosubsub">
+	<h2>Palestras <span class="title-count inscritos-count"><?php echo $contador; ?></span></h2>
+
+	<div id="col-right" style="margin-top:70px; max-width:740px; ">
+		<div class="col-wrap">
+
+
+			<table class="wp-list-table widefat fixed tags">
+				<thead>
+					<tr>
+						<th>Titulo</th>
+						<th style="width:50px">Data</th>
+						<th style="width:100px">Hora</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($lista as $key => $value): ?>
+						<tr>
+							<td>
+								<strong><?php echo $value->Titulo . '</strong> - ' .  $value->Ministrante; ?>
+								<?php echo (isset($value->Obs)) ? '<br /> <em>' . $value->Obs . '</em>' : ''; ?>
+							</td>
+							<td><?php echo date('d/m', strtotime($value->Data)); ?></td>
+							<td><?php echo date('H:m', strtotime($value->HoraInicio)); ?> - <?php echo date('H:m', strtotime($value->HoraFim)); ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+
+
+	<div id="col-left">
+
+		<div class="col-wrap">
+
+			<div class="form-wrap">
+				<h3>Adicionar nova palestra</h3>
+
+				<?php if(isset($erro)): ?>
+					<div id="setting-error-settings_updated" class="error settings-error"> 
+						<p><strong><?php echo $erro; ?></strong></p>
+					</div>
+				<?php endif; ?>
+
+				<form id="addpalestra" method="post" action="" class="validate">
+
+					<div class="form-field form-required">
+						<label for="palestra_titulo">Titulo</label>
+						<input name="palestra_titulo" 
+							   id="palestra_titulo" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_titulo'])) ? 'value="'. $_POST['palestra_titulo'].'"' : '' ?> 
+							   size="40"  />
+					</div>
+
+					<div class="form-field form-required">
+						<label for="palestra_ministrante">Ministrante</label>
+						<input name="palestra_ministrante" 
+							   id="palestra_ministrante" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_ministrante'])) ? 'value="'. $_POST['palestra_ministrante'].'"' : '' ?>  
+							   size="40" 
+							   aria-required="true" />
+					</div>
+					
+					<div class="form-field">
+						<label for="palestra_data">Data</label>
+						<input name="palestra_data"
+							   id="palestra_data" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_data'])) ? 'value="'. $_POST['palestra_data'].'"' : '' ?> 
+							   size="40"
+							   aria-required="true" />
+					</div>
+
+					<div class="clear"></div>
+					
+					<div class="form-field form-required" style="width:50%; float:left">
+						<label for="palestra_horainicio">Hora de Inicio</label>
+						<input name="palestra_horainicio" 
+							   id="palestra_horainicio" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_horainicio'])) ? 'value="'. $_POST['palestra_horainicio'].'"' : '' ?> 
+							   size="40" 
+							   aria-required="true" />
+					</div>
+
+					<div class="form-field form-required" style="width:47%; float:left">
+						<label for="palestra_horafim">Hora de Termino</label>
+						<input name="palestra_horafim" 
+							   id="palestra_horafim" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_horafim'])) ? 'value="'. $_POST['palestra_horafim'].'"' : '' ?>
+							   size="40" 
+							   aria-required="true" />
+					</div>
+
+					<div class="clear"></div>
+
+					<div class="form-field">
+						<label for="palestra_obs">Observações (Opcional)</label>
+						<input name="palestra_obs" 
+							   id="palestra_obs" 
+							   type="text" 
+							   <?php echo (isset($_POST['palestra_obs'])) ? 'value="'. $_POST['palestra_obs'].'"' : '' ?>
+							   size="40" />
+					</div>
+
+					<p class="submit">
+						<input type="submit" 
+							   name="submit_palestra" 
+							   id="submit" 
+							   class="button button-primary" 
+							   value="Adicionar"  />
+					</p>
+				</form>
+
+			</div>
+		</div>
+
+	</div><!-- /col-left -->
+</div>

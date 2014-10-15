@@ -1,0 +1,793 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(font-awesome.min.css);
+@import url(programacao.css);
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+}
+body {
+  border-top: 13px solid #4cb0fe;
+  background: #f5f5f5 url(../img/background-pattern.png);
+  font-family: 'Lato';
+  background-attachment: fixed;
+  min-width: 510px;
+}
+body .clear {
+  clear: both;
+}
+#header {
+  background: url(../img/cerebro2.png) no-repeat top center;
+  height: 530px;
+  width: 100%;
+  padding-top: 70px;
+}
+#header #logo {
+  position: relative;
+  background: url(../img/logo.png);
+  width: 507px;
+  height: 295px;
+  margin: 0px auto 50px auto;
+}
+#header .info {
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+}
+#header .info h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #4cb0fe;
+  font-size: 40px;
+}
+#header .info h2 {
+  font-size: 22px;
+}
+#header .info p {
+  font-size: 14px;
+  width: 507px;
+  margin: 20px auto;
+}
+#navigation {
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  right: 4em;
+  width: 320px;
+}
+#navigation nav ul {
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+#navigation nav ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#navigation nav ul li {
+  display: block;
+  cursor: pointer;
+  float: left;
+}
+#navigation nav ul li a {
+  float: left;
+  text-decoration: none;
+}
+#navigation nav ul li:hover > ul {
+  display: block;
+}
+#navigation nav ul li:hover a.menu span {
+  background: #4cb0fe;
+  color: #fff;
+}
+#navigation nav ul li:nth-child(3) {
+  margin-right: 10px;
+}
+#navigation nav ul li a.menu {
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-decoration: none;
+  color: #4cb0fe;
+  margin-bottom: 5px;
+}
+#navigation nav ul li a.menu span {
+  border: 1px solid #4cb0fe;
+  border-radius: 100px;
+  padding: 5px 7px;
+  font-size: 18px;
+  font-weight: normal;
+}
+#navigation nav ul li .social.fa {
+  padding: 10px;
+  border-radius: 100px;
+  height: 13px;
+  width: 13px;
+  display: block;
+  text-align: center;
+  line-height: 13px;
+  text-decoration: none;
+  color: #fff;
+  margin: 5px;
+  border: 2px solid #F5F5F5;
+}
+#navigation nav ul li .social.fa.fa-facebook {
+  background: #5D82D2;
+}
+#navigation nav ul li .social.fa.fa-twitter {
+  background: #40BFF4;
+}
+#navigation nav ul li .social.fa.fa-instagram {
+  background: #5085A5;
+}
+#navigation nav ul li .social.fa:hover {
+  background: #4cb0fe;
+}
+#navigation nav ul ul {
+  display: none;
+}
+#navigation nav ul ul li {
+  float: none;
+  display: block;
+}
+#navigation nav ul ul li a {
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-decoration: none;
+  color: #4cb0fe;
+  margin-bottom: 5px;
+}
+#navigation nav ul ul li a:hover {
+  background: #4cb0fe;
+  color: #fff;
+}
+.pagina_azul .topo {
+  height: 109px;
+  background: url(../img/pagina_azul_topo.png) no-repeat top center;
+  display: block;
+  margin-top: -109px;
+}
+.pagina_azul .topo .seta {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background: url(../img/seta.png);
+  margin: 85px auto 0px -43px;
+  left: 50%;
+}
+.pagina_azul .content {
+  background: #4cb0fe url(../img/pagina_azul_background.png);
+  padding: 30px;
+  padding-bottom: 109px;
+  font-size: 14px;
+}
+.pagina_azul .wrapper {
+  max-width: 1000px;
+  margin: auto;
+}
+#oevento .botaoInscricao {
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #5ab4f2;
+  background: -moz-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5ab4f2), color-stop(100%, #2977a8));
+  background: -webkit-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -o-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -ms-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: linear-gradient(to bottom, #5ab4f2 0%, #2977a8 100%);
+  cursor: pointer;
+  position: absolute;
+  margin: 85px auto -100px -100px;
+  left: 50%;
+}
+#oevento .botaoInscricao:hover {
+  background: #5ab4f2;
+  background: -moz-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5ab4f2), color-stop(100%, #3f93ca));
+  background: -webkit-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -o-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -ms-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: linear-gradient(to bottom, #5ab4f2 0%, #3f93ca 100%);
+}
+#oevento .content {
+  padding-top: 80px;
+  color: #fff;
+}
+#oevento .content .introducao {
+  background: url(../img/oevento_cerebro.png) no-repeat;
+  background-position: left 80px;
+}
+#oevento .content .introducao h2 {
+  width: 270px;
+  float: left;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 22px;
+  background: url(../img/dash.png) no-repeat bottom right;
+  padding-bottom: 10px;
+}
+#oevento .content .introducao .historia {
+  text-align: justify;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  width: 700px;
+  float: right;
+  margin-bottom: 20px;
+}
+#oevento .content .introducao .historia p:first-child:first-letter {
+  text-transform: uppercase;
+  font-family: Times, serif;
+  font-size: 3.4em;
+  line-height: 1em;
+  float: left;
+  margin-right: 0.1em;
+}
+#oevento .content .introducao .headline {
+  font-weight: 900;
+  color: #252525;
+  font-size: 24px;
+  width: 700px;
+  float: right;
+  text-align: justify;
+}
+.pagina .topo {
+  height: 109px;
+  background: url(../img/pagina_cinza_topo.png) no-repeat top center;
+  display: block;
+  margin-top: -209px;
+}
+.pagina .topo .seta {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background: url(../img/seta.png);
+  margin: 85px auto 0px -43px;
+  left: 50%;
+}
+.pagina .content {
+  background: #4cb0fe url(../img/pagina_azul_background.png);
+  padding: 30px;
+  padding-bottom: 109px;
+  font-size: 14px;
+}
+.pagina .wrapper {
+  max-width: 1000px;
+  margin: auto;
+}
+#programacao {
+  padding-top: 100px;
+  background: url(../img/background_programacao.png) no-repeat bottom center;
+}
+#programacao .wrapper {
+  margin-top: 50px;
+  width: 910px;
+  padding-bottom: 30px;
+}
+#programacao h2.p_titulo {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+  background: url(../img/dash_blue.png) no-repeat bottom right;
+  padding-bottom: 10px;
+  color: #4cb0fe;
+  width: 170px;
+}
+#programacao ul#prog_nav li {
+  margin: 20px 10px;
+  list-style: none;
+  float: left;
+  width: 164px;
+  display: block;
+}
+#programacao ul#prog_nav li a {
+  background: #EFEFEF;
+  width: 100%;
+  height: 40px;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding-top: 20px;
+  text-decoration: none;
+  color: #2E2E2E;
+  font-weight: 700;
+  font-size: 18px;
+}
+#programacao ul#prog_nav li a:nth-child(1) {
+  margin-left: 0px;
+}
+#programacao ul#prog_nav li a.active {
+  background: #4EAFFF;
+  color: #fff;
+}
+#programacao ul#prog_nav li:first-child {
+  margin-left: 0px;
+}
+#programacao ul#prog_nav li:last-child {
+  margin-right: 0px;
+}
+#programacao ul.hidden {
+  display: none;
+}
+#programacao ul.programacao li {
+  height: 130px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+#programacao ul.programacao li.coffee_break {
+  height: 90px;
+  overflow: hidden;
+}
+#programacao ul.programacao li.coffee_break h2.hora span.fa-clock-o,
+#programacao ul.programacao li.coffee_break h2.hora span.fa-cutlery {
+  margin-top: 15px !important;
+}
+#programacao ul.programacao li.coffee_break .info h1 {
+  line-height: 70px;
+}
+#programacao ul.programacao li h2.hora {
+  height: 120px;
+  width: 164px;
+  background: #4EAFFF;
+  margin-right: 20px;
+  float: left;
+  color: #fff;
+  text-align: center;
+  font-weight: normal;
+}
+#programacao ul.programacao li h2.hora span {
+  font-size: 18px;
+}
+#programacao ul.programacao li h2.hora span.fa-clock-o,
+#programacao ul.programacao li h2.hora span.fa-cutlery {
+  margin-top: 30px;
+  display: block;
+  font-size: 36px;
+}
+#programacao ul.programacao li .info {
+  background: #EFEFEF;
+  height: 110px;
+  float: left;
+  display: block;
+  width: 696px;
+  padding: 5px 10px;
+}
+#programacao ul.programacao li .info h1 {
+  font-weight: 900;
+  color: #4EAFFF;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+#programacao ul.programacao li .info p {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+#inscricao .inscricaoFechada {
+  background: rgba(77, 175, 255, 0.65);
+  position: absolute;
+  width: 100%;
+  height: 940px;
+}
+#inscricao .inscricaoFechada h3 {
+  text-align: center;
+  line-height: 700px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #727272;
+}
+#inscricao .pattern {
+  background: url(../img/inscricao_cerebro.png) no-repeat;
+  background-position: center right;
+}
+#inscricao .wrapper {
+  margin-top: 40px;
+}
+#inscricao .info {
+  margin-bottom: 30px;
+}
+#inscricao .info h2 {
+  width: 270px;
+  float: left;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 22px;
+  background: url(../img/dash.png) no-repeat bottom right;
+  padding-bottom: 10px;
+  color: #fff;
+}
+#inscricao .info p {
+  margin-left: 20px;
+  font-size: 13px;
+  width: 600px;
+  float: left;
+  font-weight: 700;
+}
+#inscricao .info p a {
+  color: #333;
+}
+#inscricao .formulario {
+  width: 800px;
+  margin: auto;
+}
+#inscricao .formulario p.error {
+  clear: both;
+  color: #000;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  display: inline-block;
+  padding: 1px 3px;
+  border-radius: 5px;
+  float: right;
+  margin-top: 3px;
+}
+#inscricao .formulario fieldset {
+  border: 0px;
+}
+#inscricao .formulario fieldset legend {
+  display: none;
+}
+#inscricao .formulario fieldset#subeventos {
+  background: #fff;
+  padding: 30px;
+  width: 572px;
+  float: right;
+  margin-top: 30px;
+  border-radius: 5px;
+  height: 350px;
+}
+#inscricao .formulario fieldset#subeventos p.error {
+  display: none !important;
+}
+#inscricao .formulario label {
+  display: block;
+  height: 60px;
+}
+#inscricao .formulario label span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  display: block;
+  width: 150px;
+  text-align: right;
+  float: left;
+  line-height: 35px;
+  text-shadow: 1px 1px 2px #969696;
+}
+#inscricao .formulario label[for="senha"],
+#inscricao .formulario label[for="confirme_senha"],
+#inscricao .formulario label[for="telefone"],
+#inscricao .formulario label[for="celular"] {
+  width: 50%;
+  float: left;
+}
+#inscricao .formulario label[for="nome"] {
+  width: 65%;
+  float: left;
+}
+#inscricao .formulario label[for="cpf"] {
+  width: 35%;
+  float: right;
+}
+#inscricao .formulario label[for="cpf"] span {
+  width: 50px;
+}
+#inscricao .formulario label[for="nascimento"] {
+  width: 50%;
+  float: left;
+}
+#inscricao .formulario label[for="nascimento"] span {
+  margin-right: 13px;
+}
+#inscricao .formulario label[for="sexo"] {
+  width: 50%;
+  float: left;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px #969696;
+  color: #fff;
+}
+#inscricao .formulario label[for="sexo"] span {
+  width: 90px;
+  margin-right: 13px;
+}
+#inscricao .formulario label[for="celular"] span {
+  width: 80px;
+}
+#inscricao .formulario label[for="profissional"] {
+  width: 270px;
+  float: left;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px #969696;
+  color: #fff;
+}
+#inscricao .formulario label[for="profissional"] span {
+  height: 60px;
+  margin-right: 10px;
+}
+#inscricao .formulario label[for="profissional"] input {
+  margin: 6px;
+}
+#inscricao .formulario label[for="titulo"] {
+  width: 220px;
+  float: left;
+}
+#inscricao .formulario label[for="titulo"] span {
+  width: 60px;
+}
+#inscricao .formulario label[for="area"] {
+  width: 310px;
+  float: left;
+}
+#inscricao .formulario label[for="area"] span {
+  width: 130px;
+}
+#inscricao .formulario label[for="subeventos"] {
+  width: 250px;
+  height: 20px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #6F6F6F;
+}
+#inscricao .formulario label[for="subeventos"] a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #6F6F6F;
+}
+#inscricao .formulario input[type="text"],
+#inscricao .formulario input[type="password"] {
+  padding: 10px;
+  border: 0px;
+  float: right;
+  border-radius: 5px;
+  -moz-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+  -webkit-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+  box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+}
+#inscricao .formulario input[type="text"] {
+  width: 610px;
+}
+#inscricao .formulario input[type="password"],
+#inscricao .formulario input#telefone,
+#inscricao .formulario input#celular,
+#inscricao .formulario input#nascimento {
+  width: 210px;
+}
+#inscricao .formulario input[type="radio"] {
+  margin: 12px;
+}
+#inscricao .formulario input[type="submit"] {
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  display: block;
+  padding: 10px;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #5ab4f2;
+  background: -moz-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5ab4f2), color-stop(100%, #2977a8));
+  background: -webkit-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -o-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: -ms-linear-gradient(top, #5ab4f2 0%, #2977a8 100%);
+  background: linear-gradient(to bottom, #5ab4f2 0%, #2977a8 100%);
+  cursor: pointer;
+  margin-bottom: -50px;
+}
+#inscricao .formulario input[type="submit"]:hover {
+  background: #5ab4f2;
+  background: -moz-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5ab4f2), color-stop(100%, #3f93ca));
+  background: -webkit-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -o-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: -ms-linear-gradient(top, #5ab4f2 0%, #3f93ca 100%);
+  background: linear-gradient(to bottom, #5ab4f2 0%, #3f93ca 100%);
+}
+#inscricao .formulario input#nome {
+  width: 330px;
+}
+#inscricao .formulario input#cpf {
+  width: 200px;
+}
+#inscricao .formulario input#celular {
+  width: 280px;
+}
+#inscricao .formulario input#area {
+  width: 150px;
+}
+#inscricao .formulario input.error {
+  background: #FFEAEA;
+}
+#inscricao .formulario select {
+  -moz-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+  -webkit-box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+  box-shadow: inset 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+  padding: 6px;
+  border-radius: 5px;
+  float: left;
+  margin: 3px 6px;
+  font-size: 15px;
+  width: 140px;
+  border: 0px;
+}
+#inscricao.footerfix {
+  margin-bottom: -50px;
+}
+#patrocinadores .pattern {
+  background: url(../img/background_patrocinadores.png) no-repeat;
+  background-position: center 128px;
+}
+#patrocinadores .topo {
+  height: 128px;
+  background: url(../img/pagina_cinza3_topo.png) no-repeat bottom center;
+  display: block;
+  margin-top: -128px;
+}
+#patrocinadores h2.p_titulo {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+  background: url(../img/dash_blue.png) no-repeat bottom right;
+  padding-bottom: 10px;
+  color: #4cb0fe;
+  width: 215px;
+  margin: auto;
+  margin-top: 40px;
+}
+#patrocinadores ul#patrocinio {
+  margin: auto;
+  width: 840px;
+}
+#patrocinadores ul#patrocinio li {
+  display: block;
+  width: 200px;
+  background: #fff;
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 4px 4px 0px 0px #c3c4c5;
+  -moz-box-shadow: 4px 4px 0px 0px #c3c4c5;
+  box-shadow: 4px 4px 0px 0px #c3c4c5;
+}
+#patrocinadores ul#patrocinio li .box {
+  border: 1px solid #000;
+  padding: 20px 20px 10px 20px;
+}
+#patrocinadores ul#patrocinio li .box img {
+  margin-bottom: 10px;
+}
+#patrocinadores ul#patrocinio li .box span {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  display: block;
+}
+#patrocinadores ul#patrocinio li.ouro .box {
+  border-color: #D5CF7F;
+}
+#patrocinadores ul#patrocinio li.ouro .box span {
+  color: #D5CF7F;
+}
+#patrocinadores ul#patrocinio li.prata .box {
+  border-color: #CACACA;
+}
+#patrocinadores ul#patrocinio li.prata .box span {
+  color: #CACACA;
+}
+#patrocinadores ul#patrocinio li.bronze .box {
+  border-color: #A27A67;
+}
+#patrocinadores ul#patrocinio li.bronze .box span {
+  color: #A27A67;
+}
+#patrocinadores ul#patrocinio li:hover .box {
+  border-color: #4cb0fe;
+}
+#patrocinadores ul#patrocinio li:hover .box span {
+  color: #4cb0fe;
+}
+#footer {
+  background: #fff;
+  margin-top: 50px;
+  height: 100px;
+  overflow: hidden;
+}
+#footer .wrapper {
+  width: 900px;
+  margin: auto;
+  padding-top: 20px;
+  height: 90px;
+}
+#footer .wrapper p {
+  font-size: 12px;
+  margin: 8px;
+}
+#footer .wrapper p a {
+  color: #4DAFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+#footer .infouneb-logo {
+  background: url(../img/logo-rodape.png) no-repeat top center;
+  width: 254px;
+  height: 61px;
+  float: left;
+  border-right: 1px solid #4cb0fe;
+  padding-right: 70px;
+  margin-right: 10px;
+}
+.eventos {
+  height: 360px;
+}
+.eventos ul li {
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.eventos ul li label {
+  height: auto !important;
+}
+.eventos ul li em {
+  font-style: italic;
+  font-size: 12px;
+  color: #828282;
+}
+.sysmsg.erro {
+  background: rgba(255, 255, 255, 0.85);
+  width: 800px;
+  padding: 10px;
+  margin: 20px auto;
+}
+.inscricao_concluida{
+  background: rgba(255, 255, 255, 0.85);
+  width: 800px;
+  padding: 10px;
+  margin: 20px auto;
+}
+.inscricao_concluida strong{
+  color:#4cb0fe;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.inscricao_concluida form{
+  margin-top:20px;
+}
