@@ -125,7 +125,7 @@
 
 						if(!wp_mail( $email, 'Confirmação de Inscrição na InfoUNEB 2014', $mensagem, $headers ))
 						{
-							echo '<div class="sysmsg erro">Não foi possível enviar o e-mail de confirmação.</div>';
+							//echo '<div class="sysmsg erro">Não foi possível enviar o e-mail de confirmação.</div>';
 						}
 
 						echo '<div class="inscricao_concluida"><strong>Inscrição foi efetuada com sucesso!</strong> <br />

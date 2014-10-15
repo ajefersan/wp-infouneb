@@ -6,8 +6,8 @@
 	global $wpdb;
 
 	$Conexao = new InscricoesConexao();
-	$CPF = (isset($_GET['usuario'])) ? $_GET['usuario'] : 0;
-	$Equipe = (isset($_GET['equipe'])) ? $_GET['equipe'] : 0;
+	$CPF = (isset($_GET['u'])) ? $_GET['u'] : 0;
+	$Equipe = (isset($_GET['e'])) ? $_GET['e'] : 0;
 
 	if(!$wpdb) die('Erro ao carregar página');
 

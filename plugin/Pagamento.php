@@ -1,9 +1,4 @@
 <?php
-	ini_set('display_errors',1);
-	ini_set('display_startup_erros',1);
-	error_reporting(E_ALL);
-
-	//phpinfo();
 	require_once('Conexao.php');
 	require_once('Functions.php');
 	require_once('D:\www\infouneb\wp-blog-header.php');

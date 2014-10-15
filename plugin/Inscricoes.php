@@ -212,6 +212,16 @@ class Inscricoes extends InscricoesConexao
 			$wpdb->update($this->tmaratona, array('Status' => (int) $_GET['status']), array('Id' => $equipe_id)); 
 		}
 
+		if(isset($_GET['m']))
+		{
+			if(!$maratona_id = (int) $_GET['m']) die();
+
+			$maratona['maratona']	= $maratona_id;
+			$maratona['equipe']		= $wpdb->get_row("SELECT * FROM `{$this->tmaratona}` WHERE `Id` = {$maratona_id}", 'ARRAY_A');
+
+			$this->tema('imprimir.html', $maratona);
+		}
+
 		$maratona['lista'] = $wpdb->get_results("SELECT * FROM `{$this->tmaratona}`");
 		$maratona['contador'] = count($maratona['lista']);
 

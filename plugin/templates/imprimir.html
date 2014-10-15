@@ -40,7 +40,7 @@
 			</tbody>
 		</table>
 		<?php if($inscrito['Status'] == 0) : ?>
-		<input type="text" value="http://www.info.uneb.br/pag.php?usuario=<?php echo str_replace(array('.','-'), '', $inscrito['CPF']); ?>" style="margin-right:10px" class="regular-text"/><a href="?page=infouneb&user=<?php echo $inscrito['Id']; ?>&status=-1" class="button button-primary">O e-mail já foi enviado</a>
+		<input type="text" value="http://www.info.uneb.br/pag.php?u=<?php echo str_replace(array('.','-'), '', $inscrito['CPF']); ?>" style="margin-right:10px" class="regular-text"/><a href="?page=infouneb&user=<?php echo $inscrito['Id']; ?>&status=-1" class="button button-primary">O e-mail já foi enviado</a>
 		<?php endif; ?>
 		<p></p>
 		</div>
@@ -49,7 +49,6 @@
 	<?php endif; ?>
 
 	<?php if(isset($evento)) : ?>
-		<!doctype html>
 		
 		<div id="welcome-panel" class="welcome-panel">
 		<a class="welcome-panel-close" href="admin.php?page=infouneb/eventos">Fechar</a>
@@ -84,6 +83,25 @@
 				<p></p>
 			</div>
 		</div>
+
+	<?php endif; ?>
+
+	<?php if(isset($maratona)) : ?>
+
+		<div id="welcome-panel" class="welcome-panel">
+		<a class="welcome-panel-close" href="admin.php?page=infouneb/eventos">Fechar</a>
+		<div class="welcome-panel-content">
+			<h3><?php echo $equipe['Titulo']; ?></h3>
+			<p class="about-description"><?php echo ($equipe['Status']) ? 'Pagamento Realizado' : 'Aguardando Pagamento'; ?></p>
+			
+				<?php if($equipe['Status'] == 0) : ?>
+			<input type="text" value="http://www.info.uneb.br/pag.php?e=<?php echo str_replace(array('.','-'), '', $equipe['Lider']); ?>" style="margin-right:10px" class="regular-text"/><a href="?page=infouneb/maratona&equipe=<?php echo $equipe['Id']; ?>&status=-1" class="button button-primary">O e-mail já foi enviado</a>
+			<?php endif; ?>
+
+			<p></p>
+			</div>
+		</div>
+
 	<?php endif; ?>
 
 </div>
