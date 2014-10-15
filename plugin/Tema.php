@@ -129,7 +129,7 @@
 						}
 
 						echo '<div class="inscricao_concluida"><strong>Inscrição foi efetuada com sucesso!</strong> <br />
-							Realize o pagamento para que ele seja confirmada.<br>
+							Realize o pagamento para que ele seja confirmado.<br>
 							Sua vaga só será reservada durante 3 dias.'; // mensagem que será exibida na tela do site
 
 						InfoUNEBPagseguro($valorPgto, $cadUsuario, $nome, $cpf, $email, 'pagseguro');
@@ -246,7 +246,7 @@
 				$wpdb->insert($Conexao->tmaratona, $dados);
 
 				echo '<strong>Inscrição foi efetuada com sucesso!</strong> <br />
-							Realize o pagamento para que ele seja confirmada.<br>
+							Realize o pagamento para que ele seja confirmado.<br>
 							Sua vaga só será reservada durante 3 dias.'; // mensagem que será exibida na tela do site
 
 				InfoUNEBPagseguro(30, $wpdb->insert_id, '', 'Equipe #'.$wpdb->insert_id, '', 'pagseguro', 'Maratona de Programação InfoUNeb 2014');
