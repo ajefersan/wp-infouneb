@@ -252,6 +252,9 @@ body .clear {
   float: left;
   margin-right: 0.1em;
 }
+#oevento .content .introducao .historia p{
+  margin-bottom: 20px;
+}
 #oevento .content .introducao .headline {
   font-weight: 900;
   color: #252525;

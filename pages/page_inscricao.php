@@ -11,7 +11,8 @@
 
 					<div class="info">
 						<h2>Inscrição</h2>
-						<p>Faça sua inscrição para participar da oitava edição da InfoUNEB <br /> Ao realizar o cadastro você aceita os <a href="">termos de uso</a>.</p>
+						<p>Faça sua inscrição para participar da oitava edição da InfoUNEB <br />
+						 Ao realizar o cadastro você aceita os <a href="http://www.info.uneb.br/termos-de-uso/" target="_blank">termos de uso</a>.</p>
 						<div class="clear"></div>
 					</div>
 

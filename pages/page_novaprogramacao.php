@@ -54,17 +54,19 @@
 		<ul class="maratona novaprogramacao">
 			
 			 	<div class="informacoes">
-			 	1. A maratona de programação será na manha do dia 28 de novembro.<br><br>
-				2. Serão no máximo 12 times.<br><br>
-				3. A inscrição deverá ser realizada através do formulário específico da maratona pelo líder  do time, informando os demais componentes. <br><br>
-				4. Cada time terá no máximo 3 alunos.<br><br>
-				5. A maratona terá duração de 3 horas com início as 9:00 e término as 12:00h. Sendo o WarmUp das 8:00h às 9:00h.<br><br>
-				6. As linguagens permitidas serão C, C++, Java, Pascal, PHP, caso o time precise de uma outra, avisar com antecedência e veremos viabilidade de colocá-la. <br><br>
-				7. Para a implementação os times terão à sua disposição um computador e todo o material ESCRITO que desejarem.<br><br>
-				8. Entretanto, não poderão fazer uso de material armazenado em meio digital ou ter acesso à Internet durante a competição.<br><br>
-				9. O time vencedor é aquele que resolve a maior quantidade dentro do período.<br><br>
-				10. O cadastro na Maratona só será possível após a confirmação do pagamento da inscrição no evento. Todos os membros precisam estar inscritos.<br><br>
+			 		<?php
+			 			$the_query = new WP_Query( 'page_id=79' );
 
+					// The Loop
+					if ( $the_query->have_posts() ) {
+						while ( $the_query->have_posts() ) {
+							$the_query->the_post();
+							the_content();
+						}
+					} 
+					/* Restore original Post Data */
+					wp_reset_postdata();
+					?>
 				</div>
 				<div class="maratonabox" id="pgmaratona" style="display:none;">
 					<h1>Participe da Maratona</h1>

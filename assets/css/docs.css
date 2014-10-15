@@ -1,0 +1,26 @@
+#wrapper
+{
+	max-width: 800px;
+	min-width: 200px;
+	margin:auto;
+}
+header
+{
+	height: 80px;
+}
+header #logo
+{
+	background: url(../img/logo-rodape.png);
+	width:254px;
+	height: 61px;
+	float: left;
+}
+header #title
+{
+	float: left;
+	line-height: 31px;
+	width:400px;
+	margin-left: 30px;
+	color: #828282;
+	text-transform: uppercase;
+}

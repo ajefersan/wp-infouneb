@@ -1,8 +1,4 @@
 ﻿
-#
-# Source for table "infouneb_blis"
-#
-
 CREATE TABLE `infouneb_blis` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Titulo` varchar(255) NOT NULL DEFAULT '',
@@ -14,15 +10,8 @@ CREATE TABLE `infouneb_blis` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-#
-# Data for table "infouneb_blis"
-#
 
-INSERT INTO `infouneb_blis` VALUES (1,'Desenvolvimento Android','Raul Abreu e Felipe Piñeiro',2,0,20,15),(2,'Unity3D','Jesse Nery (Comunidades Virtuais)',2,0,20,15),(3,'HTML 5 para iniciantes','Caio Nascimento',2,1,20,15),(4,'Front-end','Shankar Cabus',2,1,20,15),(5,'Robótica Epigenética','Rodrigo Guerra',1,0,20,15),(6,'Visão Computacional','José Grimaldo',1,0,20,15),(7,'Startup’s','Bruno Vinícius',1,1,20,15),(7,'Minicurso Surpresa','Surpresa',1,1,20,15);
-
-#
-# Source for table "infouneb_inscricoes"
-#
+INSERT INTO `infouneb_blis` VALUES (1,'Desenvolvimento Android','Raul Abreu e Felipe Piñeiro',2,0,20,15),(2,'Unity3D','Jesse Nery (Comunidades Virtuais)',2,0,20,15),(3,'HTML 5 para iniciantes','Caio Nascimento',2,1,20,15),(4,'Front-end','Shankar Cabus',2,1,20,15),(5,'Robótica Epigenética','Rodrigo Guerra',1,0,20,15),(6,'Visão Computacional','José Grimaldo',1,0,20,15),(7,'Startup’s','Bruno Vinícius',1,1,20,15),(8,'Minicurso Surpresa','Surpresa',1,1,20,15);
 
 CREATE TABLE `infouneb_inscricoes` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -31,10 +20,6 @@ CREATE TABLE `infouneb_inscricoes` (
   `Status` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Source for table "infouneb_maratona"
-#
 
 CREATE TABLE `infouneb_maratona` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
@@ -47,10 +32,6 @@ CREATE TABLE `infouneb_maratona` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-#
-# Source for table "infouneb_palestras"
-#
-
 CREATE TABLE `infouneb_palestras` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Titulo` varchar(255) NOT NULL DEFAULT '',
@@ -62,15 +43,7 @@ CREATE TABLE `infouneb_palestras` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-#
-# Data for table "infouneb_palestras"
-#
-
 INSERT INTO `infouneb_palestras` VALUES (1,'Idéias em Ação!','Cláudio Amorim','2014-11-24','10:00:00','11:00:00','Palestra de Abertura'),(2,'Organização do Setor de TI','Rubén Delgado','2014-11-24','11:20:00','12:20:00',NULL),(3,'Front-end','Shankar Cabus','2014-11-25','08:00:00','10:00:00',NULL),(4,'Muito Além do PC: As novas fronteiras de integração de Hardware-Software','Victor Ben-Hur','2014-11-25','10:20:00','12:20:00',NULL),(5,'Competências Profissionais','Zaíra Vasconcelos','2014-11-26','08:00:00','10:00:00',NULL),(6,'Business Intelligence - A Serviço do suporte decisório nas organizações','Grimaldo Lopes de Oliveira','2014-11-26','10:20:00','12:20:00',NULL),(7,'CAMS: Cloud, Analitics (Big Data), Mobile e Social','Carla Castro','2014-11-27','08:00:00','10:00:00',NULL),(8,'Em busca da Produtividade: Como as organizações podem alcançar a excelência na prestação de serviços aos clientes e cidadãos','José Luís Sid','2014-11-27','10:20:00','12:20:00',NULL);
-
-#
-# Source for table "infouneb_usuarios"
-#
 
 CREATE TABLE `infouneb_usuarios` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
