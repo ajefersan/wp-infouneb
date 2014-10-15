@@ -67,7 +67,7 @@
 				<p>
 					Realização: CASI - Centro Acadêmico de Sistemas de Informação. <br />
 				Apoio: <a href="http://www.consultjr.uneb.br">Consult Jr</a> e <a href="http://www.acso.uneb.br">ACSO</a>.<br />
-				Design por <a href="http://www.guirodrigues.com.br">Gui Rodrigues</a>
+				Design por <a href="http://www.guirodrigues.com.br">Gui Rodrigues</a> & Desenvolvimento por <a href="http://www.diegocosta.com.br">Diego Costa</a>
 				</p>
 			</div>
 		</div>

@@ -68,7 +68,7 @@
 					wp_reset_postdata();
 					?>
 				</div>
-				<div class="maratonabox" id="pgmaratona" style="display:none;">
+				<div class="maratonabox" id="pgmaratona">
 					<h1>Participe da Maratona</h1>
 					<?php InfoUNEBMaratona(); ?>
 				
