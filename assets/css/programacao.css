@@ -9,6 +9,7 @@ ul.novaprogramacao li{
 	list-style: none;
 	float: left;
 	margin: 10px;
+	display: table;
 }
 
 ul.novaprogramacao li:nth-child(1),
@@ -26,6 +27,11 @@ ul.novaprogramacao li img{
 	margin: auto;
 	display: block;
 	border-radius:180px;
+}
+ul.novaprogramacao li .info{
+	display: table-cell;
+	vertical-align: middle;
+	margin:auto;
 }
 
 ul.novaprogramacao li h2{
