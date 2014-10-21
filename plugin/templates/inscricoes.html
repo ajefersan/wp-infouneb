@@ -1,18 +1,4 @@
-<div class="wrap">
-	
-	<h2>Inscrições
-		<span class="title-count inscritos-count"><?php echo $contador; ?></span>
-	</h2>
-
-	<form id="posts-filter" action="" method="get">
-		<p class="search-box">
-			<input type="search" id="post-search-input" name="s" value="" disabled="disabled" />
-			<input type="submit" name="" id="search-submit" class="button" value="Pesquisar inscrição" disabled="disabled" />
-		</p>
-	</form>
-
-	<p>&nbsp;</p>
-			
+<?php function inscricoes_lista($dados) { ?>
 	<table class="wp-list-table widefat fixed tags">
 		<thead>
 			<tr>
@@ -25,7 +11,7 @@
 			</tr>
 		</thead>
 		<tbody id="the-list">
-			<?php foreach($lista as $key => $value): ?>
+			<?php foreach($dados as $key => $value): ?>
 				<tr>
 					<td><a href="admin.php?page=infouneb&u=<?php echo $value->Id; ?>"><?php echo $value->Nome; ?></a></td>
 					<td><?php echo $value->Email; ?></td>
@@ -37,5 +23,27 @@
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+
+	<p>&nbsp;</p>
+<?php } ?>
+
+<div class="wrap">
+	
+	<h2>Inscrições
+		<span class="title-count inscritos-count"><?php echo $contador; ?></span>
+	</h2>
+
+	<p>&nbsp;</p>
+
+	<h3><?php echo count($novas); ?> nova(s) inscrições</h3>
+	<?php inscricoes_lista($novas); ?>
+	
+
+	<h3><?php echo count($pendentes); ?> inscrições pendentes</h3>
+	<?php inscricoes_lista($pendentes); ?>
+
+
+	<h3><?php echo count($confirmados); ?> inscrições confirmadas</h3>
+	<?php inscricoes_lista($confirmados); ?>
 
 </div>

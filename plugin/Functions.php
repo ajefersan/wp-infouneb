@@ -29,10 +29,10 @@
 		switch ($status)
 		{
 			case -1:
-				return "E-mail de confirmação enviado.";
+				return "Aguardando Pagamento";
 				break;
 			case 0:
-				return "Aguardando Pagamento";
+				return "Aguardando e-mail de confirmação";
 				break;
 			case 1:
 				return "Pagamento Realizado";

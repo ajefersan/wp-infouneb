@@ -58,6 +58,14 @@ class Inscricoes extends InscricoesConexao
 			$wpdb->update($this->tinscricoes, array('Status' =>  (int) $_GET['status']),array('Usuario' => $user_id));
 		}
 
+		if(isset($_GET['apagar']))
+		{
+			if(!$user_id = (int) $_GET['apagar']) die();
+
+			$wpdb->delete($this->tusuarios, array( 'Id' => $user_id ), array( '%d' ) );
+			$wpdb->delete($this->tinscricoes, array( 'Usuario' => $user_id ), array( '%d' ) );
+		}
+
 		if(isset($_GET['u'])) 
 		{
 			if(!$usuario_id = (int) $_GET['u']) die();
@@ -69,8 +77,10 @@ class Inscricoes extends InscricoesConexao
 			$this->tema('imprimir.html', $imprimir);
 		}
 
-		$inscricoes['lista'] = $wpdb->get_results("SELECT * FROM `{$this->tusuarios}`");
-		$inscricoes['contador'] = count($inscricoes['lista']);
+		$inscricoes['novas'] = $wpdb->get_results("SELECT * FROM `{$this->tusuarios}` WHERE `Status` = '0'");
+		$inscricoes['pendentes'] = $wpdb->get_results("SELECT * FROM `{$this->tusuarios}` WHERE `Status` = '-1'");
+		$inscricoes['confirmados'] = $wpdb->get_results("SELECT * FROM `{$this->tusuarios}` WHERE `Status` = '1'");
+		$inscricoes['contador'] = count($wpdb->get_results("SELECT Id FROM `{$this->tusuarios}`"));
 
 		$this->tema('inscricoes.html', $inscricoes);
 		

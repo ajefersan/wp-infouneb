@@ -24,7 +24,7 @@
 	{
 		global $wpdb, $Conexao;
 
-		$blis = $wpdb->get_results("SELECT *, (SELECT count(i.`Bli`) FROM `{$Conexao->tinscricoes}` AS i WHERE i.`Bli` = b.`Id` AND i.`Status` = '1') AS Contador FROM `{$Conexao->teventos}` AS b");
+		$blis = $wpdb->get_results("SELECT *, (SELECT count(i.`Bli`) FROM `{$Conexao->tinscricoes}` AS i WHERE i.`Bli` = b.`Id`) AS Contador FROM `{$Conexao->teventos}` AS b");
 
 		foreach($blis as $key => $value)
 		{
