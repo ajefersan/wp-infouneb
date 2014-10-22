@@ -18,7 +18,9 @@
 					<td><?php echo $value->CPF; ?></td>
 					<td><?php echo date("d/m/Y H:i:s", strtotime($value->InscricaoData)); ?></td>
 					<td><?php echo getStatus($value->Status); ?></td>
-					<td><a href="?page=infouneb&user=<?php echo $value->Id; ?>&status=<?php echo ($value->Status) ? '0' : '1'; ?>" class="button button-primary">Alterar Status</a></td>
+					<?php if($value->Status != 0): ?>
+						<td><a href="?page=infouneb&user=<?php echo $value->Id; ?>&status=<?php echo ($value->Status == -1) ? '1' : '-1'; ?>" class="button button-primary">Alterar Status</a></td>
+					<?php endif; ?>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>

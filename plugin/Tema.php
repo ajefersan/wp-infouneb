@@ -30,7 +30,7 @@
 		{
 			echo '<li class="hora'.$value->Grupo.'">';
 
-			if($value->Contador <= $value->Vagas)
+			if($value->Contador < $value->Vagas)
 			{
 				echo '<input type="checkbox" name="ehora'.$value->Grupo.'" value="'. $value->Id .'" class="ehora'.$value->Grupo.'"> [R$ '.$value->Valor.',00 ] ';
 			}
@@ -105,39 +105,36 @@
 
 					if(isset($ehora0))
 					{
-						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora0, 'Usuario' => $cadUsuario, 'Status' => 1));
+						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora0, 'Usuario' => $cadUsuario));
 						$valorPgto += 15;
 					}
 
 					if(isset($ehora1))
 					{
-						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora1, 'Usuario' => $cadUsuario, 'Status' => 1));
+						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora1, 'Usuario' => $cadUsuario));
 						$valorPgto += 15;
 					}
 
 
-					if($cadBli)
+					/*$headers[] = 'From: Organização InfoUNEB 2014 <EMAIL INFO UNEB>';
+
+					$mensagem = '';  // mensagem que será enviada por e-mail
+
+					if(!wp_mail( $email, 'Confirmação de Inscrição na InfoUNEB 2014', $mensagem, $headers ))
 					{
+							echo '<div class="sysmsg erro">Não foi possível enviar o e-mail de confirmação.</div>';
+					}*/
 
-						$headers[] = 'From: Organização InfoUNEB 2014 <EMAIL INFO UNEB>';
-
-						$mensagem = '';  // mensagem que será enviada por e-mail
-
-						if(!wp_mail( $email, 'Confirmação de Inscrição na InfoUNEB 2014', $mensagem, $headers ))
-						{
-							//echo '<div class="sysmsg erro">Não foi possível enviar o e-mail de confirmação.</div>';
-						}
-
-						echo '<div class="inscricao_concluida"><strong>Inscrição foi efetuada com sucesso!</strong> <br />
+					echo '<div class="inscricao_concluida"><strong>Inscrição foi efetuada com sucesso!</strong> <br />
 							Realize o pagamento para que ele seja confirmado.<br>
 							Sua vaga só será reservada durante 3 dias.'; // mensagem que será exibida na tela do site
 
-						InfoUNEBPagseguro($valorPgto, $cadUsuario, $nome, $cpf, $email, 'pagseguro');
+					InfoUNEBPagseguro($valorPgto, $cadUsuario, $nome, $cpf, $email, 'pagseguro');
 
-						echo '</div>';
+					echo '</div>';
 
-						echo '<style type="text/css"> #publico_inscricao{ display:none !important; } </style>';
-					}
+					echo '<style type="text/css"> #publico_inscricao{ display:none !important; } </style>';
+					
 				}
 				else
 				{

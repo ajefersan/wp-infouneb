@@ -55,15 +55,7 @@ class Inscricoes extends InscricoesConexao
 			if(!$user_id = (int) $_GET['user']) die();
 
 			$wpdb->update($this->tusuarios, array('Status' => (int) $_GET['status']), array('Id' => $user_id)); 
-			$wpdb->update($this->tinscricoes, array('Status' =>  (int) $_GET['status']),array('Usuario' => $user_id));
-		}
-
-		if(isset($_GET['apagar']))
-		{
-			if(!$user_id = (int) $_GET['apagar']) die();
-
-			$wpdb->delete($this->tusuarios, array( 'Id' => $user_id ), array( '%d' ) );
-			$wpdb->delete($this->tinscricoes, array( 'Usuario' => $user_id ), array( '%d' ) );
+			//$wpdb->update($this->tinscricoes, array('Status' =>  (int) $_GET['status']),array('Usuario' => $user_id));
 		}
 
 		if(isset($_GET['u'])) 
@@ -71,8 +63,8 @@ class Inscricoes extends InscricoesConexao
 			if(!$usuario_id = (int) $_GET['u']) die();
 
 			$imprimir['usuario'] 	= $usuario_id;
-			$imprimir['inscrito']	= $wpdb->get_row("SELECT u.* FROM `infouneb_usuarios` AS u WHERE u.`Id` = {$usuario_id}", 'ARRAY_A');
-			$imprimir['blis']		= $wpdb->get_results("SELECT i.`Bli`, b.`Titulo`, b.`Tipo` FROM `infouneb_inscricoes` AS i INNER JOIN `infouneb_blis` AS b ON b.`Id` = i.`Bli` WHERE i.`Usuario` = {$usuario_id}");
+			$imprimir['inscrito']	= $wpdb->get_row("SELECT u.* FROM `{$this->tusuarios}` AS u WHERE u.`Id` = {$usuario_id}", 'ARRAY_A');
+			$imprimir['blis']		= $wpdb->get_results("SELECT i.`Bli`, b.`Titulo`, b.`Tipo` FROM `{$this->tinscricoes}` AS i INNER JOIN `{$this->teventos}` AS b ON b.`Id` = i.`Bli` WHERE i.`Usuario` = {$usuario_id}");
 
 			$this->tema('imprimir.html', $imprimir);
 		}
@@ -206,7 +198,7 @@ class Inscricoes extends InscricoesConexao
 			if($wpdb->insert_id) $_POST = array();
 		}
 
-		$evento['blis'] = $wpdb->get_results("SELECT b.`Id`, b.`Titulo`, b.`Tipo`, (SELECT count(i.`Bli`) FROM `{$this->tinscricoes}` AS i WHERE i.`Bli` = b.`Id`) AS Contador, (SELECT count(i.`Bli`) FROM `{$this->tinscricoes}` AS i WHERE i.`Bli` = b.`Id` AND i.`Status` = '1') AS Confirmados FROM `{$this->teventos}` AS b");
+		$evento['blis'] = $wpdb->get_results("SELECT b.`Id`, b.`Titulo`, b.`Tipo`, (SELECT count(i.`Bli`) FROM `{$this->tinscricoes}` AS i WHERE i.`Bli` = b.`Id`) AS Contador FROM `{$this->teventos}` AS b");
 
 		$this->tema('eventos.html', $evento);
 	}

@@ -59,11 +59,13 @@
 				Total de Inscritos: <?php echo $bli['Contador']; ?> 
 				</p>
 	
-				<?php if(count($inscritos) > 0): ?>
+				<?php 
+				$linha  = 0;
+				if(count($inscritos) > 0): ?>
 				<table class="wp-list-table widefat fixed tags noborder">
 					<thead>
 						<tr>
-
+							<th style="width:20px">#</th>
 							<th>Nome</th>
 							<th>CPF</th>
 							<th>Status</th>
@@ -72,6 +74,7 @@
 					<tbody>
 						<?php foreach ($inscritos as $key => $value): ?>
 							<tr>
+								<td><?php echo ++$linha; ?></td>
 								<td><?php echo $value->Nome; ?></td>
 								<td><?php echo $value->CPF; ?></td>
 								<td><?php echo getStatus($value->Status); ?></td>
