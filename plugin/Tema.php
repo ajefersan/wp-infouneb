@@ -91,6 +91,7 @@
 					$cadUsuario = $wpdb->insert($Conexao->tusuarios, $usuario_dados);
 					$cadErroMensagem = 'Não conseguimos realizar seu cadastro. Entre em contato com a organização do evento.';
 					$valorPgto = 10;
+					$tipoCadastro = 'Inscrição na InfoUneb 2014';
 				}
 				else
 				{
@@ -105,16 +106,48 @@
 
 					if(isset($ehora0))
 					{
-						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora0, 'Usuario' => $cadUsuario));
-						$valorPgto += 15;
+						$verContador = $wpdb->get_var("SELECT count(i.`Bli`) FROM `{$Conexao->tinscricoes}` AS i WHERE i.`Bli` = '{$ehora0}'");
+						$verVagas = $wpdb->get_var("SELECT `Vagas` FROM `{$Conexao->teventos}` AS i WHERE i.`Id` = '{$ehora0}'");
+						$verNome = $wpdb->get_var("SELECT `Titulo` FROM `{$Conexao->teventos}` AS i WHERE i.`Id` = '{$ehora0}'");
+
+						if($verContador < $verVagas)
+						{
+							$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora0, 'Usuario' => $cadUsuario));
+							$valorPgto += 15;
+							$tipoCadastro .= ' + ' . $verNome;
+						}
+						else
+						{
+							$bliErro[] = "Não existem mais vagas para " . $verNome; 
+						}
+						
 					}
 
 					if(isset($ehora1))
 					{
-						$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora1, 'Usuario' => $cadUsuario));
-						$valorPgto += 15;
+						$verContador = $wpdb->get_var("SELECT count(i.`Bli`) FROM `{$Conexao->tinscricoes}` AS i WHERE i.`Bli` = '{$ehora1}'");
+						$verVagas = $wpdb->get_var("SELECT `Vagas` FROM `{$Conexao->teventos}` AS i WHERE i.`Id` = '{$ehora1}'");
+						$verNome = $wpdb->get_var("SELECT `Titulo` FROM `{$Conexao->teventos}` AS i WHERE i.`Id` = '{$ehora1}'");
+
+						if($verContador < $verVagas)
+						{
+							$cadBli[] = $wpdb->insert($Conexao->tinscricoes, array('Bli' => $ehora1, 'Usuario' => $cadUsuario));
+							$valorPgto += 15;
+							$tipoCadastro .= ' + ' . $verNome;
+						}
+						else
+						{
+							$bliErro[] = "Não existem mais vagas para " . $verNome; 
+						}
 					}
 
+					
+					if($bliErro)
+					{
+						foreach ($bliErro as $key => $value) {
+							echo '<div class="sysmsg erro">'. $value .'</div>';
+						}
+					}
 
 					/*$headers[] = 'From: Organização InfoUNEB 2014 <EMAIL INFO UNEB>';
 
@@ -129,7 +162,7 @@
 							Realize o pagamento para que ele seja confirmado.<br>
 							Sua vaga só será reservada durante 3 dias.'; // mensagem que será exibida na tela do site
 
-					InfoUNEBPagseguro($valorPgto, $cadUsuario, $nome, $cpf, $email, 'pagseguro');
+					InfoUNEBPagseguro($valorPgto, $cadUsuario, $nome, $cpf, $email, 'pagseguro', $tipoCadastro);
 
 					echo '</div>';
 
