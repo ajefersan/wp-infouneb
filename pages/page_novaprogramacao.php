@@ -35,7 +35,7 @@
 				<div class="info">
 					<h2><?php echo $value->Titulo; ?></h2>
 					<h3><?php echo $value->Ministrante; ?></h3>
-					<h4><?php echo ($value->Grupo) ? '24 e 25 de novembro' : '26 e 27 de novembro'; ?></h4>
+					<h4><?php echo ($value->Grupo == 0) ? '24 e 25 de novembro' : '26 e 27 de novembro'; ?></h4>
 					<h4>14:00 - 18:20</h4>
 				</div>
 			</li>
@@ -49,7 +49,7 @@
 				<div class="info">
 					<h2><?php echo $value->Titulo; ?></h2>
 					<h3><?php echo $value->Ministrante; ?></h3>
-					<h4><?php echo ($value->Grupo) ? '24 e 25 de novembro' : '26 e 27 de novembro'; ?></h4>
+					<h4><?php echo ($value->Grupo == 0) ? '24 e 25 de novembro' : '26 e 27 de novembro'; ?></h4>
 					<h4>14:00 - 18:20</h4>
 				</div>
 			</li>
