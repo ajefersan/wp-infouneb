@@ -10,6 +10,6 @@
 
 	add_filter( 'show_admin_bar', '__return_false' );
 
-	$modulos = array('oevento', 'novaprogramacao', 'inscricao');
+	$modulos = array('oevento', 'novaprogramacao', 'inscricao', 'patrocinadores');
 
 	include_once "plugin/Inscricoes.php";
