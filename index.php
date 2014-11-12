@@ -21,7 +21,8 @@
 
         <meta name="description" content="<?php bloginfo( 'description'); ?>">
         <meta name = "viewport" content = "width=device-width, user-scalable = no, initial-scale=1">
-		<meta http-equiv="refresh" content="250" />
+	<meta http-equiv="refresh" content="250" />
+
 		<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/base.css">
 		<?php wp_head(); ?>
 	</head>
@@ -67,7 +68,7 @@
 				<p>
 					Realização: CASI - Centro Acadêmico de Sistemas de Informação. <br />
 				Apoio: <a href="http://www.consultjr.uneb.br">Consult Jr</a> e <a href="http://www.acso.uneb.br">ACSO</a>.<br />
-				Design por <a href="http://www.guirodrigues.com.br">Gui Rodrigues</a> & Desenvolvimento por <a href="http://www.diegocosta.com.br">Diego Costa</a>
+				Desenvolvimento por <a href="http://www.diegocosta.com.br">Diego Costa</a>  & Design por <a href="http://www.guirodrigues.com.br">Gui Rodrigues</a> 
 				</p>
 			</div>
 		</div>
