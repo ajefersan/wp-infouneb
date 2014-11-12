@@ -26,7 +26,7 @@
 							echo ((isset($value->MembroReserva)) && (!empty($value->MembroReserva))) ? 'Reserva: ' . getUserName($value->MembroReserva) . ' (' . $value->MembroReserva .')<br/>' : '';
 						?></td>
 					<td><?php echo getStatus($value->Status); ?></td>
-					<td><a href="?page=infouneb/maratona&equipe=<?php echo $value->Id; ?>&status=<?php echo ($value->Status) ? '0' : '1'; ?>" class="button button-primary">Alterar Status</a></td>
+					<td><a href="?page=infouneb/maratona&equipe=<?php echo $value->Id; ?>&status=<?php echo ($value->Status == -1) ? '1' : '-1'; ?>" class="button button-primary">Alterar Status</a></td>
 				</tr>
 			<?php endforeach; ?>
 		</tbody>

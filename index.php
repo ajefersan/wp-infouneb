@@ -21,7 +21,8 @@
 
         <meta name="description" content="<?php bloginfo( 'description'); ?>">
         <meta name = "viewport" content = "width=device-width, user-scalable = no, initial-scale=1">
-	<meta http-equiv="refresh" content="250" />
+		<meta http-equiv="refresh" content="250" />
+		<meta name="author" content="Diego Costa - http://www.diegocosta.com.br">
 
 		<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/base.css">
 		<?php wp_head(); ?>

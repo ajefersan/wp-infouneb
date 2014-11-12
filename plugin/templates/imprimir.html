@@ -95,7 +95,7 @@
 		<a class="welcome-panel-close" href="admin.php?page=infouneb/eventos">Fechar</a>
 		<div class="welcome-panel-content">
 			<h3><?php echo $equipe['Titulo']; ?></h3>
-			<p class="about-description"><?php echo ($equipe['Status']) ? 'Pagamento Realizado' : 'Aguardando Pagamento'; ?></p>
+			<p class="about-description"><?php echo getStatus($equipe['Status']); ?></p>
 			
 				<?php if($equipe['Status'] == 0) : ?>
 			<input type="text" value="http://www.info.uneb.br/pag.php?e=<?php echo str_replace(array('.','-'), '', $equipe['Lider']); ?>" style="margin-right:10px" class="regular-text"/><a href="?page=infouneb/maratona&equipe=<?php echo $equipe['Id']; ?>&status=-1" class="button button-primary">O e-mail já foi enviado</a>
